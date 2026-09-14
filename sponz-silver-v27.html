@@ -4,6 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>SPONZ Silver · Creator Operations</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#07080a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#e8e6e2" media="(prefers-color-scheme: light)" />
+<link rel="icon" href="icons/icon-512.png" type="image/png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="SPONZ" />
+<meta name="mobile-web-app-capable" content="yes" />
 <style>
   /* ========================================================================
      SPONZ · Silver — Liquid Glass Design System
@@ -1613,6 +1624,13 @@ renderIdentity();renderCalendar();renderHome();renderDeals();renderMoney();rende
   const first = document.querySelector('.screen.active');
   afterRender(first, ++navToken);
 })();
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
 </script>
 </body>
 </html>

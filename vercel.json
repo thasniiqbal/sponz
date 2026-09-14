@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/sponz-silver-v27.html" }
+  ]
+}
